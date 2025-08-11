@@ -27,9 +27,10 @@ We see this project being used by commercial banking and financial institutions 
 All data is from the IEEE-CIS Fraud Detection detaset which can be found at the follwing link: 
 https://www.kaggle.com/competitions/ieee-fraud-detection
 
-It is a dataset of credit card transactions with almost 600K entries and almost 400 features. it's very messy data. Most features are unknown/proprietary so we don't know what they represent. Many columns have >86% missing values. 
+It is a dataset of credit card transactions with almost 600K entries and 368 features. it's very messy data. Most features are unknown/proprietary so we don't know what they represent. Many columns have >86% missing values. 
 
 ## Approach
+
 Baseline Models: Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM). We list their performance metrics below. 
 
 -Isolation Forest: Runtime was ~12 seconds, AUC-ROC was .738.
@@ -37,8 +38,6 @@ With fraud threshold at 30%, precision was .075 and recall was .646.
 
 -GMM: Runtime was ~40 seconds, AUC-ROC was .773.
 With fraud threshold at 30%, precision was .184 and recall was .676. 
-
-
 
 
 Deep Learning Model: 
