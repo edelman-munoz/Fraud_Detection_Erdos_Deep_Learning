@@ -8,14 +8,13 @@ Primary goal is for the deep learning model to outperform other more traditional
 
 ## Objectives
 
--create a Gaussian baseline model
--create a deep learning model with 
--outperformed baseline model in precision, recall, and AUC-ROC
+-Use Gaussian Mixture baseline model
+-Create a deep learning model with autoencoders that outperforms baseline model in AUC-ROC as well as both precision and recall for some chosen threshold
 ## KPIs
 -precision
--recall
--AUC-ROC
--F1-score
+-recall: Heavy bias towards high recall because notifying users of a suspicios transaction and allowing them to cancel the card if the transaction is fraudulent is more important than making sure that all identified cases are definitely fraud
+-AUC-ROC: For measure of quality of model independent of chosen fraud threshold
+-runtime: Not necessarily a performance metric of the model, but somethign we really want to emphasize to determine the tradeoffs made when we make a better model
 ## Stakeholders
 We see this project being used by commercial banking and financial institutions to detect fraudulent transactions. We aim to provide an improvement from existing models. 
 
@@ -23,6 +22,19 @@ We see this project being used by commercial banking and financial institutions 
 
 ## Data
 ## Approach
+Baseline Models: Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM). We list their performance metrics below. 
+
+-Isolation Forest: Runtime was ~12 seconds, AUC-ROC was .738
+With fraud threshod at 30%, precision was .075 and recall was .646. 
+
+-GMM: Runtime was ~40 seconds, AUC-ROC was .773
+With fraud threshod at 30%, precision was .184 and recall was .676. 
+
+
+
+
+Deep Learning Model: 
+
 ## Results
 ### Conclusions and Future Implications
 ## References
