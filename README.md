@@ -66,6 +66,7 @@ We developed an autoencoder designed to learn a compressed representation of inp
 ### Conclusions and Future Implications
 
 The deep autoencoder model using UID-based detection with the Average Rule significantly outperforms baseline models in AUC-ROC, recall, and precision, highlighting its ability to identify more fraud cases while maintaining manageable false positives. The Fraction Rule slightly improves recall at the cost of some precision and AUC. Though the runtime is higher, the accuracy gains are promising for real-world fraud detection needs.
+
 Our final model demonstrates that unsupervised deep learning with UID-level aggregation improves fraud detection metrics beyond traditional unsupervised methods. We plan to focus on further hyperparameter tuning, architectural exploration, and optimizing runtime for scalable deployment. 
 
 ## References
