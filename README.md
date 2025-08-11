@@ -12,12 +12,9 @@ Primary goal is for the deep learning model to outperform other more traditional
 -Create a deep learning model with autoencoders that outperforms baseline model in AUC-ROC as well as both precision and recall for some chosen threshold
 ## KPIs
 -precision
-
--recall: Heavy bias towards high recall because notifying users of a suspicios transaction and allowing them to cancel the card if the transaction is fraudulent is more important than making sure that all identified cases are definitely fraud
-
--AUC-ROC: For measure of quality of model independent of chosen fraud threshold
-
--runtime: Not necessarily a performance metric of the model, but somethign we really want to emphasize to determine the tradeoffs made when we make a better model
+/n -recall: Heavy bias towards high recall because notifying users of a suspicios transaction and allowing them to cancel the card if the transaction is fraudulent is more important than making sure that all identified cases are definitely fraud
+/n -AUC-ROC: For measure of quality of model independent of chosen fraud threshold
+/n -runtime: Not necessarily a performance metric of the model, but somethign we really want to emphasize to determine the tradeoffs made when we make a better model
 ## Stakeholders
 We see this project being used by commercial banking and financial institutions to detect fraudulent transactions. We aim to provide an improvement from existing models. 
 
