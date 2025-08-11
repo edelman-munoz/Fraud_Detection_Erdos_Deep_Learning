@@ -61,6 +61,7 @@ We developed an autoencoder designed to learn a compressed representation of inp
 |----------------|---------|---------|-----------|------------------|
 | Multivariate Gaussian (MG) | 0.771   | 67.4%   | 18.4%     | ~10 seconds      |
 | Gaussian Mixture Model (GMM) | 0.773   | 67.6%   | 18.4%     | ~40 seconds      |
+| Isolation Forest             | 0.738   | 64.6%    | 7.5%     | ~12 seconds
 
 ![ROC_curves](/ROC_curves.png)
 ### Conclusions and Future Implications
