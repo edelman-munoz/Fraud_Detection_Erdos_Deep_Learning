@@ -24,6 +24,11 @@ We see this project being used by commercial banking and financial institutions 
 ## Project Setup
 
 ## Data
+All data is from the IEEE-CIS Fraud Detection detaset which can be found at the follwing link: 
+https://www.kaggle.com/competitions/ieee-fraud-detection
+
+It is a dataset of credit card transactions with almost 600K entries and almost 400 features. it's very messy data. Most features are unknown/proprietary so we don't know what they represent. Many columns have >86% missing values. 
+
 ## Approach
 Baseline Models: Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM). We list their performance metrics below. 
 
