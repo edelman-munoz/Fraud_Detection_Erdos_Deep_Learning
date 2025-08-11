@@ -32,7 +32,7 @@ It is a dataset of credit card transactions with almost 600K entries and 368 fea
 ## Approach
 
 Baseline Models: 
-Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM). We list their performance metrics below. 
+Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM) and a multivariate Gaussian model (MG). The GMM performed the best of the baseline models, and was the baseline we chose to compare our deep learning model to. 
 
 Deep Learning Model: 
 We developed an autoencoder designed to learn a compressed representation of input data by minimizing the reconstruction error between the original and reconstructed inputs. The model uses three linear layers with ReLU activations and dropout for regularization in the encoder. The model has 368 features that are pre-embedding; after embedding, they get mapped to low-dimensional dense vectors. 
