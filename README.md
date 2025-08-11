@@ -35,7 +35,7 @@ Baseline Models:
 Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM) and a multivariate Gaussian model (MG). The GMM performed the best of the baseline models, and was the baseline we chose to compare our deep learning model to. 
 
 Deep Learning Model: 
-We developed an autoencoder designed to learn a compressed representation of input data by minimizing the reconstruction error between the original and reconstructed inputs. The model uses three linear layers with ReLU activations and dropout for regularization in the encoder. The model has 368 features that are pre-embedding; after embedding, they get mapped to low-dimensional dense vectors. 
+We developed an autoencoder designed to learn a compressed representation of input data by minimizing the reconstruction error between the original and reconstructed inputs. The model uses three linear layers with ReLU activations and dropout for regularization in the encoder. The decoder has a structure symmetrical to that of the encoder. The input data has 368 features pre-embedding; after embedding, they get mapped to 8-dimensional latent space. 
 
 ![Autoencoder](/autoencoder_diagram.jpg)
 
