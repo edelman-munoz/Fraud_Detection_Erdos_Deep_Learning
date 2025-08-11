@@ -11,7 +11,7 @@ Primary goal is for the deep learning model to outperform other more traditional
 -Use Gaussian Mixture baseline model
 -Create a deep learning model with autoencoders that outperforms baseline model in AUC-ROC as well as both precision and recall for some chosen threshold
 ## KPIs
--Precision
+-Precision: To reduce false positives
 
 -Recall: Heavy bias towards high recall because notifying users of a suspicios transaction and allowing them to cancel the card if the transaction is fraudulent is more important than making sure that all identified cases are definitely fraud
 
@@ -31,19 +31,41 @@ It is a dataset of credit card transactions with almost 600K entries and 368 fea
 
 ## Approach
 
-Baseline Models: Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM). We list their performance metrics below. 
-
--Isolation Forest: Runtime was ~12 seconds, AUC-ROC was .738.
-With fraud threshold at 30%, precision was .075 and recall was .646. 
-
--GMM: Runtime was ~40 seconds, AUC-ROC was .773.
-With fraud threshold at 30%, precision was .184 and recall was .676. 
-
+Baseline Models: 
+Most viable baseline models based on runtime and performance metrics were a standard isolation forest and a Gaussian Mixture Model (GMM). We list their performance metrics below. 
 
 Deep Learning Model: 
+We developed an autoencoder designed to learn a compressed representation of input data by minimizing the reconstruction error between the original and reconstructed inputs. The model uses three linear layers with ReLU activations and dropout for regularization in the encoder. The model has 368 features that are pre-embedding; after embedding, they get mapped to low-dimensional dense vectors. 
 
 ## Results
+-We adopted a refined train/validation/dev/test split strategy, separating normal and fraudulent transactions carefully to avoid data leakage.  
+
+-Validation sets were used for early stopping and threshold determination; dev/test sets were strictly held out for final evaluation.  
+
+-Thresholds were set by flagging the top 30% of UIDs or transactions with the highest reconstruction error as fraud.
+
+### Deep Autoencoder Performance:
+
+| Metric         | Average Rule       | Fraction Rule      |
+|----------------|--------------------|--------------------|
+| AUC-ROC        | 0.802              | 0.737              |
+| Recall         | 71.82%             | 71.92%             |
+| Precision      | 34.61%             | 34.12%             |
+| Runtime        | ~20 minutes        | ~20 minutes        |
+
+### Baseline Performance:
+
+| Model          | AUC-ROC | Recall  | Precision | Runtime          |
+|----------------|---------|---------|-----------|------------------|
+| Multivariate Gaussian (MG) | 0.771   | 67.4%   | 18.4%     | ~10 seconds      |
+| Gaussian Mixture Model (GMM) | 0.773   | 67.6%   | 18.4%     | ~40 seconds      |
+
+
 ### Conclusions and Future Implications
+
+The deep autoencoder model using UID-based detection with the Average Rule significantly outperforms baseline models in AUC-ROC, recall, and precision, highlighting its ability to identify more fraud cases while maintaining manageable false positives. The Fraction Rule slightly improves recall at the cost of some precision and AUC. Though the runtime is higher, the accuracy gains are promising for real-world fraud detection needs.
+Our final model demonstrates that unsupervised deep learning with UID-level aggregation improves fraud detection metrics beyond traditional unsupervised methods. We plan to focus on further hyperparameter tuning, architectural exploration, and optimizing runtime for scalable deployment. 
+
 ## References
 IEEE-CIS Fraud Detection Dataset: https://www.kaggle.com/competitions/ieee-fraud-detection/overview
 
