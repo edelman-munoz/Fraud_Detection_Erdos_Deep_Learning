@@ -11,15 +11,15 @@ Primary goal is for the deep learning model to outperform other more traditional
 -Use Gaussian Mixture baseline model
 -Create a deep learning model with autoencoders that outperforms baseline model in AUC-ROC as well as both precision and recall for some chosen threshold
 ## KPIs
--precision
+-Precision
 
--recall: Heavy bias towards high recall because notifying users of a suspicios transaction and allowing them to cancel the card if the transaction is fraudulent is more important than making sure that all identified cases are definitely fraud
+-Recall: Heavy bias towards high recall because notifying users of a suspicios transaction and allowing them to cancel the card if the transaction is fraudulent is more important than making sure that all identified cases are definitely fraud
 
 -AUC-ROC: For measure of quality of model independent of chosen fraud threshold
 
--runtime: Not necessarily a performance metric of the model, but somethign we really want to emphasize to determine the tradeoffs made when we make a better model
+-Runtime: Not necessarily a performance metric of the model, but something we really want to emphasize to determine the tradeoffs made when we make a better model
 ## Stakeholders
-We see this project being used by commercial banking and financial institutions to detect fraudulent transactions. We aim to provide an improvement from existing models. 
+We see this project being used by commercial banking and financial institutions to detect fraudulent transactions and alert card holders of possible credit card theft. We aim to provide an improvement from existing models. 
 
 ## Project Setup
 
