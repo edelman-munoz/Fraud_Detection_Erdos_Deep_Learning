@@ -37,6 +37,8 @@ Most viable baseline models based on runtime and performance metrics were a stan
 Deep Learning Model: 
 We developed an autoencoder designed to learn a compressed representation of input data by minimizing the reconstruction error between the original and reconstructed inputs. The model uses three linear layers with ReLU activations and dropout for regularization in the encoder. The model has 368 features that are pre-embedding; after embedding, they get mapped to low-dimensional dense vectors. 
 
+![Autoencoder](/autoencoder_diagram.jpg)
+
 ## Results
 -We adopted a refined train/validation/dev/test split strategy, separating normal and fraudulent transactions carefully to avoid data leakage.  
 
@@ -60,7 +62,7 @@ We developed an autoencoder designed to learn a compressed representation of inp
 | Multivariate Gaussian (MG) | 0.771   | 67.4%   | 18.4%     | ~10 seconds      |
 | Gaussian Mixture Model (GMM) | 0.773   | 67.6%   | 18.4%     | ~40 seconds      |
 
-
+![ROC_curves](/ROC_curves.png)
 ### Conclusions and Future Implications
 
 The deep autoencoder model using UID-based detection with the Average Rule significantly outperforms baseline models in AUC-ROC, recall, and precision, highlighting its ability to identify more fraud cases while maintaining manageable false positives. The Fraction Rule slightly improves recall at the cost of some precision and AUC. Though the runtime is higher, the accuracy gains are promising for real-world fraud detection needs.
